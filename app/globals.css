@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 47 95% 55%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 47 95% 55%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 47 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.premium-card {
+  @apply relative overflow-hidden rounded-[2rem] border-0 bg-gradient-to-br from-[#bf953f] via-[#fcf6ba] to-[#b38728] p-[1px] shadow-xl transition-all duration-300;
+}
+
+.premium-card-content {
+  @apply relative h-full w-full rounded-[2rem] bg-black/90 p-6 backdrop-blur-sm;
+}
+
+.premium-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-[#fcf6ba] via-[#b38728] to-[#bf953f] opacity-0 transition-opacity duration-300;
+}
+
+.premium-card:hover::before {
+  @apply opacity-100;
+}
+
+.team-card-hover {
+  @apply relative transition-all duration-300;
+}
+
+.team-card-hover::after {
+  content: '';
+  @apply absolute inset-0 -z-10 rounded-lg opacity-0 transition-opacity duration-300;
+  background: linear-gradient(45deg, var(--primary), transparent 60%);
+  filter: blur(15px);
+}
+
+.team-card-hover:hover::after {
+  @apply opacity-30;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, rgba(191,149,63,0.15) 0%, transparent 70%);
+}
+
+.section-gradient {
+  background: linear-gradient(to bottom, transparent, rgba(191,149,63,0.05) 50%, transparent);
+}
+
+/* New animations */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(191,149,63,0.2),
+                0 0 40px rgba(191,149,63,0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(191,149,63,0.4),
+                0 0 60px rgba(191,149,63,0.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.infinite-scroll {
+  animation: slide 20s linear infinite;
+}
+
+.glass-effect {
+  @apply backdrop-blur-lg bg-black/30 border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary;
+}
