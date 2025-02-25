@@ -8,7 +8,7 @@ import { SiteHeader } from '@/components/site-header';
 import { AboutSection } from '@/components/about-section';
 import { TeamSection } from '@/components/team-section';
 import { ParallaxSection } from '@/components/parallax-section';
-import { Footer } from '@/components/footer';
+import { Footer } from '../components/footer';
 import Image from 'next/image';
 import dynamic from "next/dynamic";
 import Lottie from 'react-lottie';

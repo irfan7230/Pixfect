@@ -18,7 +18,7 @@ export default function TeamPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-clip-text text-transparent gold-gradient">
-                We are Pixfect
+                Meet minds behind pixfect
               </span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
