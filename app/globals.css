@@ -91,7 +91,6 @@
   background: linear-gradient(to bottom, transparent, rgba(191,149,63,0.05) 50%, transparent);
 }
 
-/* New animations */
 @keyframes pulse-glow {
   0%, 100% { 
     box-shadow: 0 0 20px rgba(191,149,63,0.2),
@@ -122,4 +121,36 @@
 
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+  .premium-card {
+    @apply rounded-[1.5rem];
+  }
+  
+  .premium-card-content {
+    @apply p-4;
+  }
+}
+
+/* Improved animations */
+.fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-in_forwards];
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced card interactions */
+.premium-card:hover .premium-card-content {
+  @apply bg-black/80;
+}
+
+.premium-card:hover .gold-gradient {
+  background: linear-gradient(to right, #fcf6ba, #bf953f, #fbf5b7, #b38728);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
